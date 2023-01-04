@@ -36,7 +36,7 @@ class SecurityConfig {
     @Bean
     fun filterChainBasic(http: HttpSecurity): SecurityFilterChain {
         http.httpBasic()
-        http.authorizeHttpRequests().anyRequest().permitAll()
+        http.authorizeHttpRequests().anyRequest().authenticated()
 
         return http.build()
     }
